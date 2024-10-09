@@ -11,15 +11,28 @@ conn = mysql.connector.Connect(
 cursor = conn.cursor()
 
 if conn.is_connected():
-    print("Conectado com a bodega")
+    print("Conectado com a bodega...\n")
 else:
-    print("Fudeu")
+    print("Fudeu kkk ....\n")
 
 
-def inquiry():
+def inquiryB():
+    cont = 0
     cursor.execute("SHOW DATABASES")
     bancos = cursor.fetchall()
-    print("Bancos de dados disponíveis:")
-    print(bancos[0])
+    print("Bancos de dados disponíveis:\n")
+    for c in bancos:
+        print(f"{c[0]}", end=' | ')
 
-inquiry()
+
+def inquiryT():
+    cursor.execute("SHOW TABLES")
+    tabelas = cursor.fetchall()
+    print("Tabelas disponíveis:\n")
+    for c in tabelas:
+        print(f"{c[0]}")
+
+
+
+inquiryB()
+inquiryT()
