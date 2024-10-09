@@ -57,3 +57,10 @@ def deletar_banco(nome_banco: str):
     cursor.execute("DROP DATABASE {}".format(nome_banco,))
 
 
+def criar_tabela(nome, nome2, nome3, nome4, nome5):
+    cursor.execute(f"CREATE TABLE IF NOT EXISTS {nome}(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    {nome2} TEXT,
+    {nome3} INTEGER,
+    {nome4} TEXT,
+    {nome5} TEXT")
