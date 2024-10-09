@@ -17,6 +17,9 @@ else:
 
 
 def inquiryB():
+    """
+    Mostra os Bancos disponíveis
+    """
     cont = 0
     cursor.execute("SHOW DATABASES")
     bancos = cursor.fetchall()
@@ -26,6 +29,9 @@ def inquiryB():
 
 
 def inquiryT():
+    """
+    Mostra as Tabelas disponíveis
+    """
     cursor.execute("SHOW TABLES")
     tabelas = cursor.fetchall()
     print("Tabelas disponíveis:\n")
@@ -33,6 +39,21 @@ def inquiryT():
         print(f"{c[0]}")
 
 
+def criar_banco(nome_banco: str):
+    """
+    Cria um banco de dados
+    Parametros:
+        nome_banco (str): Nome do banco
+    """
+    cursor.execute("CREATE DATABASE {}".format(nome_banco,))
 
-inquiryB()
-inquiryT()
+
+def deletar_banco(nome_banco: str):
+    """
+    Deleta um banco de dados
+    Parametros:
+        nome_banco (str): Nome do banco
+    """
+    cursor.execute("DROP DATABASE {}".format(nome_banco,))
+
+
