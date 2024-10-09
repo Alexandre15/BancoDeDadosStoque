@@ -58,9 +58,9 @@ def deletar_banco(nome_banco: str):
 
 
 def criar_tabela(nome, nome2, nome3, nome4, nome5):
-    cursor.execute(f"CREATE TABLE IF NOT EXISTS {nome}(
+    cursor.execute(f"CREATE TABLE IF NOT EXISTS {}(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    {nome2} TEXT,
-    {nome3} INTEGER,
-    {nome4} TEXT,
-    {nome5} TEXT")
+    {} TEXT,
+    {} INTEGER,
+    {} TEXT,
+    {} TEXT".format(nome, nome2, nome3, nome4, nome5))
